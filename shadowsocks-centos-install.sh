@@ -3,9 +3,9 @@ show(){
     ip=$(curl ifconfig.me)
     portt=$(cat /etc/shadowsocks.json | sed -n 3p)
     passwordd=$(cat /etc/shadowsocks.json | sed -n 6p)
-    echo -e "\033[31mip:$ip\033[0m"
-    echo -e "\033[31m$portt\033[0m"
-    echo -e "\033[31m$passwordd\033[0m"
+    echo -e "\033[42;37m\"ip\":$ip\033[0m"
+    echo -e "\033[42;37m$portt\033[0m"
+    echo -e "\033[42;37m$passwordd\033[0m"
     exit
 }
 
