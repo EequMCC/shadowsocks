@@ -63,6 +63,7 @@ if [ $sel -eq 2 ];then
     echo "[1]start"
     echo "[2]stop"
     echo "[3]config"
+    echo "[4]show config"
     read -p "Please select:" selm
     if [ $selm -eq 1 ];then
         start()
@@ -73,5 +74,8 @@ if [ $sel -eq 2 ];then
     if [ $selm -eq 3 ];then
         ssserver -d stop
         config()
+    fi
+    if [ $selm -eq 4 ];then
+        show()
     fi
 fi
