@@ -19,7 +19,7 @@ stop(){
 
 json(){
     if [ -e /etc/shadowsocks.json ];then
-        rm -y /etc/shadowsocks.json
+        rm -f /etc/shadowsocks.json
     fi
     echo "{">>/etc/shadowsocks.json
     echo "\"server\":\"0.0.0.0\",">>/etc/shadowsocks.json
