@@ -1,6 +1,6 @@
 #!/bin/bash
 show(){
-    ip=$(curl ifconfig.me)
+    ip=$(curl ifconfig.me) &> /dev/null
     echo "ip:$ip"
     echo "port:$port"
     echo "password:$password"
@@ -9,7 +9,7 @@ show(){
 
 start(){
     ssserver -c /etc/shadowsocks.json -d start
-    show()
+    show
 }
 
 stop(){
@@ -33,7 +33,7 @@ json(){
     echo "}">>/etc/shadowsocks.json
     read -p "Start Now?[Y/N]:" stn
     if [ $stn -eq "Y" ] || [ $stn -eq "y" ];then
-        start()
+        start
     else
         exit
     fi
@@ -48,7 +48,7 @@ config(){
     if [ -z $password ];then
         password="ppasswordd"
     fi
-    json()
+    json
     }
 
 echo "[1]install"
@@ -57,7 +57,7 @@ read -p "Please select:" sel
 if [ $sel -eq 1 ];then
     sudo apt-get install python-pip
     sudo pip install shadowsocks
-    config()
+    config
 fi
 if [ $sel -eq 2 ];then
     echo "[1]start"
@@ -66,16 +66,16 @@ if [ $sel -eq 2 ];then
     echo "[4]show config"
     read -p "Please select:" selm
     if [ $selm -eq 1 ];then
-        start()
+        start
     fi
     if [ $selm -eq 2 ];then
-        stop()
+        stop
     fi
     if [ $selm -eq 3 ];then
         ssserver -d stop
-        config()
+        config
     fi
     if [ $selm -eq 4 ];then
-        show()
+        show
     fi
 fi
