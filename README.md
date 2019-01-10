@@ -1,6 +1,12 @@
 
 Step to use:
 
-$sudo -i
-$wget && chmod +x shadowsocks-install.sh
-$./shadowsocks-install.sh
+Debian
+  $sudo -i
+  $wget && chmod +x shadowsocks-install.sh
+  $./shadowsocks-install.sh
+  
+CentOS
+  $sudo -i
+  $wget && chmod +x shadowsocks-install.sh
+  $./shadowsocks-install.sh
