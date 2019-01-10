@@ -1,9 +1,11 @@
 #!/bin/bash
 show(){
     ip=$(curl ifconfig.me)
+    portt=$(cat /etc/shadowsocks.json | sed -n 3p)
+    passwordd=$(cat /etc/shadowsocks.json | sed -n 6p)
     echo "ip:$ip"
-    echo "port:$port"
-    echo "password:$password"
+    echo "port:$portt"
+    echo "password:$passwordd"
     exit
 }
 
