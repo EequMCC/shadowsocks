@@ -4,6 +4,7 @@ show(){
     echo "ip:$ip"
     echo "port:$port"
     echo "password:$password"
+    exit
 }
 
 startt(){
