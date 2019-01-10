@@ -19,7 +19,6 @@ stop(){
 
 json(){
     if [ -e /etc/shadowsocks.json ];then
-        del /etc/shadowsocks.json
         rm /etc/shadowsocks.json
     fi
     echo "{">>/etc/shadowsocks.json
