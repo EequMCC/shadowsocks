@@ -1,6 +1,6 @@
 #!/bin/bash
 show(){
-    ip=$(curl ifconfig.me)>/dev/null
+    ip=$(curl ifconfig.me)&> /dev/null
     echo "ip:$ip"
     echo "port:$port"
     echo "password:$password"
