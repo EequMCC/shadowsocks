@@ -61,7 +61,7 @@ if [ $sel -eq 1 ];then
     sudo apt-get install python-pip
     pip install shadowsocks
     sudo rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
-    wget 
+    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/openssl.py
     sudo mv openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/
     config
 fi
