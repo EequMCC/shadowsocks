@@ -58,7 +58,7 @@ echo "[1]install"
 echo "[2]manage"
 read -p "Please select:" sel
 if [ $sel -eq 1 ];then
-    sudo apt-get install python-pip
+    sudo yum install python-setuptools && easy_install pip
     pip install shadowsocks
     sudo rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
     wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/openssl.py
