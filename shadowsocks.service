@@ -5,3 +5,6 @@ Description=Shadowsocks Client Service
 Type=simple
 User=root
 ExecStart=ssserver -c /etc/shadowsocks.json -d start
+
+[Install]
+WantedBy=multi-user.target
