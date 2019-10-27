@@ -58,8 +58,7 @@ if [ $sel -eq 1 ];then
     rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
     wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/openssl.py
     mv openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto
-    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks && chmod +x shadowsocks && mv shadowsocks /etc/init.d
-    update-rc.d shadowsocks defaults
+    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks && chmod +x shadowsocks && mv shadowsocks /etc/init.d && update-rc.d shadowsocks defaults
     cp /etc/init.d/shadowsocks /usr/bin
     config
 fi
