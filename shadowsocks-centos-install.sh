@@ -63,6 +63,9 @@ if [ $sel -eq 1 ];then
     sudo rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
     wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/openssl.py
     sudo mv openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/
+    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/startup
+    sudo mv startup /etc/init.d/ && chmod +x /etc/init.d/startup
+    sudo update-rc.d startup defaults
     config
 fi
 if [ $sel -eq 2 ];then
