@@ -2,11 +2,11 @@ Step to use:
 
 Debian
 
-wget "https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks-debian-install.sh" && chmod +x shadowsocks-debian-install.sh && ./shadowsocks-debian-install.sh
+wget "https://raw.githubusercontent.com/EequMCC/shadowsocks/master/debian-install.sh" && chmod +x debian-install.sh && ./debian-install.sh
 
 CentOS
 
-wget "https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks-centos-install.sh" && chmod +x shadowsocks-centos-install.sh && ./shadowsocks-centos-install.sh
+wget "https://raw.githubusercontent.com/EequMCC/shadowsocks/master/centos-install.sh" && chmod +x centos-install.sh && ./centos-install.sh
 
 Teddysun
 
