@@ -10,4 +10,4 @@ wget "https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks-c
 
 Teddysun
 
-wget "https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks-teddysun.sh" && chmod +x shadowsocks-teddysun.sh && ./shadowsocks-teddysun.sh
+wget "https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks-all.sh" && chmod +x shadowsocks-all.sh && ./shadowsocks-all.sh
