@@ -1,17 +1,17 @@
 #!/bin/bash
 show(){
-    ip=$(curl ifconfig.me)
+    ip=$(cat /etc/shadowsocks.json | sed -n 2p)
     portt=$(cat /etc/shadowsocks.json | sed -n 3p)
     passwordd=$(cat /etc/shadowsocks.json | sed -n 6p)
     echo -e "\033[42;37m\"ip\":$ip\033[0m"
-    echo -e "\033[42;37m$portt\033[0m"
-    echo -e "\033[42;37m$passwordd\033[0m"
+    echo -e "\033[42;37m\"port\":$portt\033[0m"
+    echo -e "\033[42;37m\"password\":$passwordd\033[0m"
     exit
 }
 
 startt(){
     ssserver -c /etc/shadowsocks.json -d start
-    show
+    exit
 }
 
 stopp(){
@@ -24,7 +24,7 @@ json(){
         rm -f /etc/shadowsocks.json
     fi
     echo "{">>/etc/shadowsocks.json
-    echo "\"server\":\"0.0.0.0\",">>/etc/shadowsocks.json
+    echo "\"server\":\"$ip\",">>/etc/shadowsocks.json
     echo "\"server_port\":$port,">>/etc/shadowsocks.json
     echo "\"local_address\": \"127.0.0.1\",">>/etc/shadowsocks.json
     echo "\"local_port\":1080,">>/etc/shadowsocks.json
@@ -50,6 +50,7 @@ config(){
     if [ -z $password ];then
         password="ppasswordd"
     fi
+    ip=$(curl ifconfig.me)
     json
     }
 
