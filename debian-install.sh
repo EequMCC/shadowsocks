@@ -57,9 +57,8 @@ if [ $sel -eq 1 ];then
     pip install shadowsocks
     rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
     wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/openssl.py
-    mv openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/
-    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/startup
-    mv startup /etc/init.d/ && chmod +x /etc/init.d/startup
+    mv openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto
+    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/startup && chmod +x startup && mv startup /etc/init.d
     update-rc.d startup defaults
     config
 fi
