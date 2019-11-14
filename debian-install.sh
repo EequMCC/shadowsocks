@@ -50,6 +50,7 @@ read -p "Please select:" sel
 if [ $sel -eq 1 ];then
     apt-get install python-pip
     pip install shadowsocks
+    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks && chmod +x shadowsocks && mv shadowsocks /usr/bin
     config
 fi
 if [ $sel -eq 2 ];then
