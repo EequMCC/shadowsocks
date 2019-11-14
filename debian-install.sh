@@ -10,12 +10,7 @@ show(){
 }
 
 startt(){
-    ssserver -c /etc/shadowsocks.json -d start
-    exit
-}
-
-stopp(){
-    ssserver -d stop
+    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/alert.sh && chmod +x alert.sh && ./alert.sh
     exit
 }
 
@@ -64,10 +59,10 @@ if [ $sel -eq 2 ];then
     echo "[4]show config"
     read -p "Please select:" selm
     if [ $selm -eq 1 ];then
-        startt
+        ssserver -c /etc/shadowsocks.json -d start
     fi
     if [ $selm -eq 2 ];then
-        stopp
+        ssserver -d stop
     fi
     if [ $selm -eq 3 ];then
         ssserver -d stop
