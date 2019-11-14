@@ -49,20 +49,13 @@ config(){
     json
     }
 
-prep(){
-    rm /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
-    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/openssl.py
-    mv openssl.py /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto
-    wget https://raw.githubusercontent.com/EequMCC/shadowsocks/master/shadowsocks && chmod +x shadowsocks && mv shadowsocks /usr/bin
-    config
-    }
 echo "[1]install"
 echo "[2]manage"
 read -p "Please select:" sel
 if [ $sel -eq 1 ];then
     apt-get install python-pip
     pip install shadowsocks
-    prep
+    config
 fi
 if [ $sel -eq 2 ];then
     echo "[1]start"
